@@ -3,44 +3,62 @@
 /// <summary>
 /// Toggles a light
 /// </summary>
-[RequireComponent(typeof(Light))]
 public class ToggleLight : MonoBehaviour
 {
     [Tooltip("Controls the state of the light")]
     public bool isOn = false;
-    private Light currentLight = null;
+
+    [Tooltip("Reference to the Light component to toggle")]
+    public Light flashlightLight;
 
     private void Awake()
     {
-        currentLight = GetComponent<Light>();
+        // Ensure we have a reference to the light component
+        if (flashlightLight == null)
+        {
+            flashlightLight = GetComponentInChildren<Light>();
+        }
     }
 
     private void Start()
     {
-        currentLight.enabled = isOn;
+        if (flashlightLight != null)
+        {
+            flashlightLight.enabled = isOn;
+        }
     }
 
     public void TurnOn()
     {
         isOn = true;
-        currentLight.enabled = isOn;
+        UpdateLight();
     }
 
     public void TurnOff()
     {
         isOn = false;
-        currentLight.enabled = isOn;
+        UpdateLight();
     }
 
     public void Flip()
     {
         isOn = !isOn;
-        currentLight.enabled = isOn;
+        UpdateLight();
+    }
+
+    private void UpdateLight()
+    {
+        if (flashlightLight != null)
+        {
+            flashlightLight.enabled = isOn;
+        }
     }
 
     private void OnValidate()
     {
-        if (currentLight)
-            currentLight.enabled = isOn;
+        if (flashlightLight != null)
+        {
+            flashlightLight.enabled = isOn;
+        }
     }
 }
