@@ -32,12 +32,14 @@ public class PlayContinuousSound : MonoBehaviour
 
     public void Play()
     {
+        Debug.Log(name + "is playing");
         audioSource.clip = sound;
         audioSource.Play();
     }
 
     public void Pause()
     {
+        Debug.Log(name + "is paused");
         audioSource.clip = null;
         audioSource.Pause();
     }
