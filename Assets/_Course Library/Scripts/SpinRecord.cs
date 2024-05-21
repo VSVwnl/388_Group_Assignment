@@ -37,6 +37,7 @@ public class SpinRecord : MonoBehaviour
         Debug.Log(name + "is called" + args.interactableObject.transform.name);
         
         {
+            handle.transform.localPosition = targetPosition;
             PlayContinuousSound cd = args.interactableObject.transform.GetComponent<PlayContinuousSound>();
             cd.Play();
             if (this.cd != null)
@@ -68,7 +69,6 @@ public class SpinRecord : MonoBehaviour
             isRotating = true;
 
             handle.transform.localRotation = Quaternion.Euler(targetRotation);
-            handle.transform.localPosition = targetPosition;
         }
     }
 
@@ -80,7 +80,6 @@ public class SpinRecord : MonoBehaviour
             isRotating = false;
 
             handle.transform.localRotation = Quaternion.Euler(-1.805f, 0f, 0f);
-            handle.transform.localPosition = targetPosition;
         }
     }
 
