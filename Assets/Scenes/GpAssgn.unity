@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8468,7 +8468,7 @@ PrefabInstance:
     - target: {fileID: 8864583573558614332, guid: bedc598ba4f669b48ba46540e05017ff,
         type: 3}
       propertyPath: m_InteractionLayers.m_Bits
-      value: 8
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -18428,6 +18428,7 @@ MonoBehaviour:
   rotationSpeed: 100
   handle: {fileID: 1745583770}
   targetRotation: {x: -1.805, y: 50, z: 0}
+  targetPosition: {x: -0.108367, y: 0.05, z: -0.03527069}
   socketInteractor: {fileID: 0}
 --- !u!4 &1841683668 stripped
 Transform:
